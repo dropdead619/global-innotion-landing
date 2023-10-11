@@ -60,16 +60,17 @@ function toggleCardVisibility(idx: number) {
     </BaseText>
 
     <div class="flex flex-col gap-5.5">
-      <BaseCard v-for="card, i in programCards" :key="card.id">
+      <BaseCard
+        v-for="card, i in programCards"
+        :key="card.id"
+        class="overflow-hidden"
+      >
         <BaseText class="mb-6" variant="xl">
           {{ card.title }}
         </BaseText>
 
         <div
           class="flex flex-col  w-full gap-6 items-center lg:flex-row"
-          :class="{
-            'mb-10': card.isOpen,
-          }"
         >
           <div class="flex flex-wrap order-0 gap-4 ">
             <BaseTab
@@ -95,10 +96,10 @@ function toggleCardVisibility(idx: number) {
           </div>
         </div>
         <div
-          class="flex flex-col transition transition-all ease-in-out gap-4 duration-500"
+          class="flex flex-col transition transition-all ease-in-out gap-4 duration-500 relative"
           :class="{
             'max-h-0 opacity-0': !card.isOpen,
-            'max-h-400': card.isOpen,
+            'max-h-400 mt-10 opacity-100': card.isOpen,
           }"
         >
           <div

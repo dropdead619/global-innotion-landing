@@ -59,18 +59,11 @@ function onInput(e: Event) {
 <template>
   <div class="h-fit">
     <div
-      class="bg-transparent border-none flex flex-col h-fit w-full"
+      class="flex flex-col h-fit w-full"
     >
-      <RFText
-        v-if="label?.length"
-        class="text-dark-md leading-4 whitespace-nowrap"
-        variant="xxs"
-      >
-        {{ label }}
-      </RFText>
       <input
         :id="id"
-        class="border-b border-b-white font-inter outline-none text-white w-full py-4 text-2xl leading-7 !bg-transparent"
+        class="font-medium bg-[#181818] border-1 border-[#FFFFFF14] rounded-2xl text-white text-base w-full py-5 px-8 leading-6"
         :disabled="disabled"
         :inputmode="props.type === 'number' ? 'numeric' : 'text'"
         :placeholder="placeholder"
@@ -83,7 +76,7 @@ function onInput(e: Event) {
     <span v-if="error" class="mt-1 text-error text-xs block">
       <!-- @slot slot for input error message -->
       <slot name="error">
-        {{ $t(error) }}
+        {{ error }}
       </slot>
     </span>
   </div>

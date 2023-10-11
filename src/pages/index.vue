@@ -5,6 +5,7 @@ import SuitableForBlock from '~/components/layout/SuitableForBlock.vue';
 import WorkExamples from '~/components/layout/WorkExamples.vue';
 import AboutUs from '~/components/layout/AboutUs.vue';
 import CoursePrograms from '~/components/layout/CoursePrograms.vue';
+import CourseForm from '~/components/layout/CourseForm.vue';
 </script>
 
 <template>
@@ -15,5 +16,6 @@ import CoursePrograms from '~/components/layout/CoursePrograms.vue';
     <WorkExamples />
     <AboutUs />
     <CoursePrograms />
+    <CourseForm />
   </div>
 </template>
