@@ -1,7 +1,7 @@
 <script setup lang="ts">
 defineProps({
   size: {
-    type: String as PropType<'xs' | 'sm' | 'md' | 'lg'>,
+    type: String as PropType<'xxs' | 'xs' | 'sm' | 'md' | 'lg'>,
     default: 'md',
   },
   variant: {
@@ -26,6 +26,10 @@ defineProps({
 
     &--dark {
       @apply bg-black rounded-4xl;
+    }
+
+    &--xxs {
+      @apply py-6 px-10;
     }
 
     &--xs {

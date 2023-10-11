@@ -1,12 +1,9 @@
 <script setup lang="ts">
 import type { PropType } from 'vue';
 
-  type InputVariantType = 'number' | 'text' | 'password';
+type InputVariantType = 'number' | 'text' | 'password';
 
 const props = defineProps({
-  /**
-     * ID of the input field
-     */
   id: {
     type: String,
     required: true,
@@ -83,16 +80,5 @@ function onInput(e: Event) {
 </template>
 
   <style scoped>
-/* Change the white to any color */
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 30px #4B970F inset !important;
-}
 
-/*Change text in autofill textbox*/
-input:-webkit-autofill{
-    -webkit-text-fill-color: white !important;
-}
   </style>

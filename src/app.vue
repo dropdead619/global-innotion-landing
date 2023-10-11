@@ -1,9 +1,10 @@
 <script setup lang="ts">
-// import Favicon from '@/assets/favicon.svg?inline';
+// @ts-nocheck
+import Favicon from '../public/favicon.ico';
 
 useHead({
   title: 'Global Innotion',
-  // link: [{ rel: 'icon', href: Favicon }],
+  link: [{ rel: 'icon', href: Favicon }],
 });
 </script>
 

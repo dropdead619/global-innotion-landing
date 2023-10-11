@@ -6,6 +6,8 @@ import WorkExamples from '~/components/layout/WorkExamples.vue';
 import AboutUs from '~/components/layout/AboutUs.vue';
 import CoursePrograms from '~/components/layout/CoursePrograms.vue';
 import CourseForm from '~/components/layout/CourseForm.vue';
+import FaqBlock from '~/components/layout/FaqBlock.vue';
+import TheFooter from '~/components/layout/TheFooter.vue';
 </script>
 
 <template>
@@ -17,5 +19,7 @@ import CourseForm from '~/components/layout/CourseForm.vue';
     <AboutUs />
     <CoursePrograms />
     <CourseForm />
+    <FaqBlock />
+    <TheFooter />
   </div>
 </template>

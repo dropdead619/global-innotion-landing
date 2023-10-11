@@ -32,7 +32,7 @@
       </div>
     </div>
 
-    <div class="ml-auto p-2">
+    <div class="ml-auto p-2 hidden md:block">
       <a href="#">
         <BaseText class="hover:(text-[#585858])" variant="md">
           записаться

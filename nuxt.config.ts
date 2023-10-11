@@ -8,7 +8,12 @@ export default defineNuxtConfig({
     'nuxt-gtag',
     '@vueuse/nuxt',
     'nuxt-windicss',
+    // '@nuxtjs/supabase',
   ],
+  // supabase: {
+  //   url: 'https://rmwqxjmtpyhyfllgirnd.supabase.co',
+  //   serviceKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJtd3F4am10cHloeWZsbGdpcm5kIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTcwNTA1MzksImV4cCI6MjAxMjYyNjUzOX0.PVhxB-yQ8A-0F_mG-bHGBmWUJSpG2XWnZMqw9zEhuLo',
+  // },
   components: {
     dirs: [
       '@/components/base-components',
