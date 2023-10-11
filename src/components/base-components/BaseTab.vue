@@ -1,17 +1,20 @@
 <script lang="ts" setup>
 withDefaults(defineProps<{
   text: string
-  variant?: 'dark' | 'light'
+  variant?: 'dark' | 'light' | 'gray'
+  size?: 'sm' | 'md'
 }>(), {
   variant: 'dark',
+  size: 'sm',
 });
 </script>
 
 <template>
-  <div class="base-tab" :class="`base-tab--${variant}`">
+  <div class="base-tab" :class="[`base-tab--${variant}`, `base-tab--${size}`]">
     <BaseText
+      class="cursor-default"
       :text-color="variant === 'dark' ? 'white' : 'dark'"
-      :variant="variant === 'dark' ? 'sm' : 'lg'"
+      :variant="size === 'sm' ? 'sm' : 'lg'"
       weight="medium"
     >
       {{ text }}
@@ -23,11 +26,23 @@ withDefaults(defineProps<{
 .base-tab {
   @apply flex items-center justify-center;
   &--dark {
-    @apply bg-dark rounded-[3.625rem] h-11 py-2.25 px-6;
+    @apply bg-dark rounded-[3.625rem];
   }
 
   &--light {
-    @apply bg-white rounded-[4.875rem] py-6.5 px-9;
+    @apply bg-white rounded-[4.875rem];
+  }
+
+  &--gray {
+    @apply bg-[#F8F8F8] rounded-[3.625rem];
+  }
+
+  &--sm {
+    @apply py-3 px-6;
+  }
+
+  &--md {
+    @apply py-6.5 px-9;
   }
 }
 </style>

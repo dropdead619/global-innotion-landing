@@ -52,6 +52,7 @@ const technologiesTabs = ref([
       <BaseTab
         v-for="tab in technologiesTabs"
         :key="tab"
+        size="md"
         :text="tab"
         variant="light"
       />

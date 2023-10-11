@@ -34,7 +34,7 @@ export default defineConfig({
         dark: '#1B1B1B',
         text: '#474747',
         subtext: '#8B8B8B',
-        border: '#F2F2F2',
+        border: '#0000000A',
         successLight: '#F1F8EC',
         star: '#FFC700',
         blue: '#008CDB',
