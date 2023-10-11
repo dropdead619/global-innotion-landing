@@ -1,0 +1,54 @@
+@import '_fonts';
+
+* {
+  @apply m-0 p-0 box-border;
+}
+
+html {
+  @apply text-xs sm:text-base;
+}
+
+body {
+    font-family: "Suisse Intl", sans-serif;
+    background-color: #F5F5F5;
+    @apply h-full m-0 w-full p-0 relative;
+  }
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 4px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ABAEA3;
+  border-radius: 4px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ABAEB3;
+  cursor: pointer;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+    width: 24px;
+    height: 20px;
+    padding: 4px 0;
+    text-align: center;
+    background: #FFFFFF;
+}
+input:focus {
+  outline-color: rgba(0, 0, 0, 0);
+  outline-width: 0px;
+}

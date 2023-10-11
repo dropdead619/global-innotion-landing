@@ -1,0 +1,17 @@
+@mixin font($alias, $name, $weight, $style: normal) {
+    @font-face {
+      font-family: $alias;
+      src: url("@/assets/fonts/" + $name + ".woff2") format("woff2");
+      font-weight: $weight;
+      font-display: swap;
+      font-style: $style;
+    }
+  }
+  
+  /* Назначаем шрифты для сайта */
+  // Raleway
+  @include font('Suisse Intl', 'SuisseIntl-Light', 300);
+  @include font('Suisse Intl', 'SuisseIntl-Regular', 400);
+  @include font('Suisse Intl', 'SuisseIntl-Medium', 450);
+  @include font('Suisse Intl', 'SuisseIntl-SemiBold', 600);
+  @include font('Suisse Intl', 'SuisseIntl-Bold', bold);

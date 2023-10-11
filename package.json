@@ -1,0 +1,39 @@
+{
+  "type": "module",
+  "private": true,
+  "packageManager": "pnpm@8.5.1",
+  "scripts": {
+    "dev:host": "nuxt --hostname 0 --port 8000",
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "typecheck": "pnpm vue-tsc --noEmit",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@vueuse/nuxt": "^10.1.2",
+    "floating-vue": "2.0.0-beta.20",
+    "vue": "^3.3.2",
+    "vue3-carousel": "^0.3.1",
+    "maska": "1.5.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.38.6",
+    "@commitlint/cli": "17.1.2",
+    "@commitlint/config-conventional": "17.1.0",
+    "consola": "^3.1.0",
+    "eslint": "^8.40.0",
+    "husky": "^8.0.3",
+    "json-server": "^0.17.2",
+    "lint-staged": "^13.2.0",
+    "nuxt": "^3.4.3",
+    "nuxt-gtag": "^0.5.7",
+    "nuxt-windicss": "^2.6.1",
+    "sass": "1.53.0",
+    "sass-loader": "^13.2.0",
+    "typescript": "^5.0.4",
+    "vue-tsc": "^1.6.5"
+  }
+}
