@@ -58,8 +58,8 @@ withDefaults(defineProps<{ variant?: Variant; weight?: Weight; heading?: 'h1' | 
 
     // 16px
     &--sm {
-      font-size: 1rem;
       line-height: 1.375rem;
+      @apply text-sm sm:(text-base) ;
     }
     // 18px
     &--md {
@@ -68,37 +68,28 @@ withDefaults(defineProps<{ variant?: Variant; weight?: Weight; heading?: 'h1' | 
     }
     // 20px
     &--lg {
-      font-size: 1.25rem;
-      line-height: 1.75rem;
+      @apply text-base leading-6 sm:(text-[1.25rem] leading-7) ;
     }
     // 32px
     &--xl {
-      font-size: 2rem;
-      line-height: 2.5rem; /* 125% */
+      @apply text-2xl leading-7 sm:(text-[2rem] leading-10) ;
     }
     // 48px
     &--1xl {
-      font-size: 3rem;
-      line-height: 3.5rem; /* 116.667% */
+      @apply text-[28px] leading-[36px] sm:(text-[3rem] leading-[3.5rem]) ;
     }
 
     // 24px
     &--h3 {
-      font-size: 1.5rem;
-      font-weight: 450;
-      line-height: 2rem;
+      @apply font-medium text-[20px] leading-[28px] sm:(text-[24px] leading-8) ;
     }
     // 64px
     &--h2 {
-      font-size: 4rem;
-      font-weight: 450;
-      line-height: 4.5rem;
+      @apply font-medium text-[28px] leading-[36px] sm:(text-[64px] leading-18) ;
     }
     // 72px
     &--h1 {
-      font-size: 4.5rem;
-      font-weight: 450;
-      line-height: 5rem; /* 111.111% */
+      @apply text-[28px] leading-[32px] sm:(text-5xl leading-12 font-medium) lg:(text-7xl leading-20 font-medium) ;
     }
   }
   </style>

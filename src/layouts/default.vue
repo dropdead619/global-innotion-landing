@@ -5,7 +5,7 @@ import TheHeader from '~/components/layout/TheHeader.vue';
 <template>
   <div id="landing-container">
     <TheHeader />
-    <div class="container mx-auto pt-18 relative">
+    <div class="container mx-auto pt-22 relative">
       <slot />
     </div>
   </div>

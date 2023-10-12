@@ -3,7 +3,7 @@
 import Favicon from '../public/favicon.ico';
 
 useHead({
-  title: 'Global Innotion',
+  title: 'giacademy',
   link: [{ rel: 'icon', href: Favicon }],
 });
 </script>

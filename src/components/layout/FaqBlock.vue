@@ -63,9 +63,9 @@ function toggleCard(idx: number) {
 </script>
 
 <template>
-  <div class="py-17.5">
+  <div id="faq" class="py-10 md:py-17.5">
     <div class="mb-8">
-      <BaseText class="mb-2" heading="h2">
+      <BaseText class="mb-6 sm:mb-10" heading="h2">
         FAQ
       </BaseText>
       <BaseText
@@ -85,13 +85,11 @@ function toggleCard(idx: number) {
         size="xxs"
       >
         <div class="flex justify-between">
-          <BaseText
-            class="!leading-7"
-            variant="md"
-            weight="medium"
+          <p
+            class="font-medium text-base leading-7"
           >
             {{ faq.title }}
-          </BaseText>
+          </p>
 
           <CloseIcon
             v-if="faq.isOpen"
@@ -105,16 +103,15 @@ function toggleCard(idx: number) {
           />
         </div>
 
-        <BaseText
-          class="transition transition-all ease-in-out duration-500"
+        <p
+          class="text-sm transition transition-all ease-in-out duration-500"
           :class="{
             'max-h-0 opacity-0': !faq.isOpen,
-            'max-h-100 mt-6 opacity-100': faq.isOpen,
+            'max-h-100 mt-4 opacity-100 sm:mt-6': faq.isOpen,
           }"
-          variant="sm"
         >
           {{ faq.content }}
-        </BaseText>
+        </p>
       </BaseCard>
     </div>
   </div>

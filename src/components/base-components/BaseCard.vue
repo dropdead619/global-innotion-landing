@@ -29,7 +29,7 @@ defineProps({
     }
 
     &--xxs {
-      @apply py-6 px-10;
+      @apply p-5 sm:(px-10 py-6) ;
     }
 
     &--xs {
@@ -41,7 +41,7 @@ defineProps({
     }
 
     &--md {
-      @apply p-10;
+      @apply p-6 sm:p-10 ;
     }
 }
 </style>

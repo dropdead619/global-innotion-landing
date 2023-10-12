@@ -46,7 +46,7 @@ const tag = computed(() => {
       font-size: 1.25rem;
       font-weight: 450;
       line-height: 1.5rem;
-      @apply bg-transparent border-solid border-white border-1 rounded-6xl text-white py-4 px-8 hover:(bg-white text-dark) ;
+      @apply bg-transparent border-solid border-white border-1 rounded-6xl py-3 px-8 sm:(py-4) !text-white hover:(bg-white !text-dark) ;
     }
   }
   </style>

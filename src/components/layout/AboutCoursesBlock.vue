@@ -2,8 +2,8 @@
 </script>
 
 <template>
-  <div class="py-17.5">
-    <BaseText class="mb-10" heading="h2">
+  <div class="py-10 md:py-17.5">
+    <BaseText class="mb-6 sm:mb-10" heading="h2">
       О курсах
     </BaseText>
 

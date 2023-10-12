@@ -18,14 +18,20 @@ const technologiesTabs = ref([
 
 <template>
   <div class="hero-block">
-    <div class="hero-block__content">
+    <div class="flex flex-col hero-block__content items-start">
       <div class="flex mb-10 gap-3.5">
-        <BaseTab
-          v-for="tab in infoTabs"
+        <template
+          v-for="tab, i in infoTabs"
           :key="tab"
-          :text="tab"
-          variant="dark"
-        />
+        >
+          <BaseTab
+            :class="{
+              '!hidden sm:(!block)': i === 2,
+            }"
+            :text="tab"
+            variant="dark"
+          />
+        </template>
       </div>
 
       <div class="mb-24">
@@ -43,12 +49,14 @@ const technologiesTabs = ref([
         </BaseText>
       </div>
 
-      <BaseButton variant="primary">
-        Записаться
+      <BaseButton class="mt-auto sm:mt-0" variant="primary">
+        <p class="text-base sm:text-[20px]">
+          Записаться
+        </p>
       </BaseButton>
     </div>
 
-    <div class="flex flex-wrap mt-16 gap-4">
+    <div class="flex flex-wrap mt-4 gap-4 sm:mt-16">
       <BaseTab
         v-for="tab in technologiesTabs"
         :key="tab"
@@ -62,14 +70,13 @@ const technologiesTabs = ref([
 
 <style lang="scss" scoped>
 .hero-block {
-  @apply pb-17.5;
+  @apply pb-10 md:pb-17.5;
   &__content {
     width: 100%;
-    height: 700px;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url('../../assets/images/hero.png') no-repeat, lightgray -82px -369.39px / 105.959% 370.198% no-repeat ;
     background-size: cover;
     border-radius: 40px;
-    @apply py-[6.1875rem] px-20;
+    @apply h-[553px] py-10 px-6 sm:(h-175) md:(py-[6.1875rem] px-20) ;
   }
 }
 </style>

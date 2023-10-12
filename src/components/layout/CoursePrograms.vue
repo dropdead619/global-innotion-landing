@@ -54,8 +54,8 @@ function toggleCardVisibility(idx: number) {
 </script>
 
 <template>
-  <div class="py-17.5">
-    <BaseText class="mb-10" heading="h2">
+  <div id="program" class="py-10 md:py-17.5">
+    <BaseText class="mb-6 sm:mb-10" heading="h2">
       Программы курсов
     </BaseText>
 
@@ -72,7 +72,7 @@ function toggleCardVisibility(idx: number) {
         <div
           class="flex flex-col  w-full gap-6 items-center lg:flex-row"
         >
-          <div class="flex flex-wrap order-0 gap-4 ">
+          <div class="flex flex-wrap order-0 gap-2 sm:gap-4 ">
             <BaseTab
               v-for="tab in card.tabs"
               :key="tab"
@@ -99,13 +99,13 @@ function toggleCardVisibility(idx: number) {
           class="flex flex-col transition transition-all ease-in-out gap-4 duration-500 relative"
           :class="{
             'max-h-0 opacity-0': !card.isOpen,
-            'max-h-400 mt-10 opacity-100': card.isOpen,
+            'max-h-400 mt-6 sm:mt-10 opacity-100': card.isOpen,
           }"
         >
           <div
             v-for="option, j in card.options"
             :key="option"
-            class="border-border flex border-1 rounded-3xl py-6 px-10 gap-6 items-center"
+            class="border-border flex border-1 rounded-3xl py-5.5 gap-3 items-center sm:(py-6 px-10 gap-6 ) "
           >
             <div class="bg-border rounded-full flex font-medium h-7 text-sm w-7 items-center justify-center">
               {{ j + 1 }}
