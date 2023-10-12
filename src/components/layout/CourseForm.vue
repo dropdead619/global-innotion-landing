@@ -45,7 +45,7 @@ async function sendForm() {
         ],
         body: {
           subject: `giacademy: Новая заявка от ${state.name} ${state.email}`,
-          receiver: 'sacrifice619@gmail.com',
+          receiver: 'euphoriawallet@gmail.com',
           html_text: `<p><strong>Имя:</strong> ${state.name}</p>
                       <p><strong>Номер телефона:</strong> ${state.phone}</p>
                       <p><strong>Email:</strong> ${state.email}</p>`,
