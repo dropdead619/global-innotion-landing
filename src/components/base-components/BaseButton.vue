@@ -12,6 +12,10 @@ defineProps({
     type: String as PropType<ButtonVariant>,
     default: 'primary',
   },
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const attrs = useAttrs();
@@ -31,6 +35,7 @@ const tag = computed(() => {
     :is="tag"
     class="btn"
     :class="`btn--${variant}`"
+    :disabled="disabled"
   >
     <slot name="icon-left" />
     <slot />

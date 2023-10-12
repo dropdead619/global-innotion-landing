@@ -6,6 +6,7 @@ const state = reactive({
   phone: '',
   email: '',
   isSubmitted: false,
+  isLoading: false,
   errors: {
     name: '',
     phone: '',
@@ -35,22 +36,21 @@ async function sendForm() {
     email: '',
   };
   if (validate()) {
+    state.isLoading = true;
     try {
-      // const response = await useFetch('https://rmwqxjmtpyhyfllgirnd.supabase.co/functions/v1/resend', {
-      //   method: 'post',
-      //   headers: [
-      //     ['Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJtd3F4am10cHloeWZsbGdpcm5kIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTcwNTA1MzksImV4cCI6MjAxMjYyNjUzOX0.PVhxB-yQ8A-0F_mG-bHGBmWUJSpG2XWnZMqw9zEhuLo'],
-      //     ['Content-Type', 'application/json'],
-      //   ],
-      //   body: {
-      //     from: `${state.name} - <${state.email}>`,
-      //     subject: `Новая заявка от ${state.name}`,
-      //     to: ['sacrifice619@gmail.com'],
-      //     html: `<p>Name: ${state.name}</p> <br/> Phone: ${state.phone} <br/> Email: ${state.email}`,
-      //   },
-      // });
-
-      // response.execute();
+      await $fetch('https://email.euphoria.games/api/email/', {
+        method: 'post',
+        headers: [
+          ['Content-Type', 'application/json'],
+        ],
+        body: {
+          subject: `giacademy: Новая заявка от ${state.name} ${state.email}`,
+          receiver: 'sacrifice619@gmail.com',
+          html_text: `<p><strong>Имя:</strong> ${state.name}</p>
+                      <p><strong>Номер телефона:</strong> ${state.phone}</p>
+                      <p><strong>Email:</strong> ${state.email}</p>`,
+        },
+      });
 
       state.isSubmitted = true;
       $swal.fire({
@@ -71,6 +71,8 @@ async function sendForm() {
       };
     } catch (err) {
       console.log(err);
+    } finally {
+      state.isLoading = false;
     }
   }
 }
@@ -110,10 +112,16 @@ async function sendForm() {
             placeholder="Email"
           />
         </div>
-        <BaseButton class="w-full !rounded-2xl" @click="sendForm">
-          <p class="text-base sm:text-[20px]">
+        <BaseButton
+          v-if="!state.isSubmitted"
+          class="w-full !rounded-2xl"
+          :disabled="isLoading"
+          @click="sendForm"
+        >
+          <p v-if="!state.isLoading" class="text-base sm:text-[20px]">
             Записаться на курс
           </p>
+          <LoadingIcon v-else class="mx-auto transform transition transition-all animate-spin " />
         </BaseButton>
       </div>
     </div>

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const webGames = 'web игры';
 </script>
 
 <template>
@@ -15,7 +16,7 @@
           </BaseText>
 
           <div class="flex gap-2 sm:gap-4">
-            <BaseTab text="игры web" variant="dark" />
+            <BaseTab :text="webGames" variant="dark" />
 
             <BaseTab text="мобильные игры" variant="dark" />
           </div>
