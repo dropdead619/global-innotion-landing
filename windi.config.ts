@@ -45,6 +45,9 @@ export default defineConfig({
       fontFamily: {
         intl: ['SuisseIntl', 'sans-serif'],
       },
+      fontWeight: {
+        medium: '450',
+      },
       width: {
         fit: 'fit-content',
       },
@@ -59,7 +62,7 @@ export default defineConfig({
         '4xl': '2rem',
       },
       container: {
-        padding: '2rem',
+        padding: '0px',
       },
     },
   },

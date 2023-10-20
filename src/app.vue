@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // @ts-nocheck
-import Favicon from '../public/favicon.ico';
+import Favicon from './public/favicon.ico';
 
 useHead({
   title: 'giacademy',

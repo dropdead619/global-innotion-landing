@@ -16,6 +16,27 @@ const state = reactive({
 
 const { $swal }: { $swal: typeof SweetAlert2.default } = useNuxtApp() as any;
 
+function onInputEmail() {
+  if (!state.email)
+    state.errors.email = 'Поле "Email" обязательно';
+  else
+    state.errors.email = '';
+}
+
+function onInputName() {
+  if (!state.name)
+    state.errors.name = 'Поле "Email" обязательно';
+  else
+    state.errors.name = '';
+}
+
+function onInputPhone() {
+  if (!state.phone)
+    state.errors.phone = 'Поле "Email" обязательно';
+  else
+    state.errors.phone = '';
+}
+
 function validate() {
   if (!state.email)
     state.errors.email = 'Поле "Email" обязательно';
@@ -97,6 +118,7 @@ async function sendForm() {
             class="w-full"
             :error="state.errors.name"
             placeholder="ФИО"
+            @update:model-value="onInputName"
           />
           <BaseInput
             id="phone"
@@ -104,12 +126,16 @@ async function sendForm() {
             v-maska="'+7 (###) ### ## ##'"
             :error="state.errors.phone"
             placeholder="Номер телефона"
+            @update:model-value="onInputPhone"
           />
           <BaseInput
             id="email"
             v-model="state.email"
             :error="state.errors.email"
+            name="email"
             placeholder="Email"
+            type="email"
+            @update:model-value="onInputEmail"
           />
         </div>
         <BaseButton
@@ -131,7 +157,7 @@ async function sendForm() {
 <style lang="scss" scoped>
 .course-form {
   &__wrapper {
-    background: url('../../assets/images/form_bg.png') no-repeat, lightgray 0px -351.253px / 118.968% 239.376% no-repeat;
+    background: url('./form_bg.png') no-repeat, lightgray 0px -351.253px / 118.968% 239.376% no-repeat;
     background-size: cover;
     @apply flex flex-col rounded-4xl py-8 px-6 gap-14 justify-between sm:(py-10 px-30) lg:flex-row ;
   }

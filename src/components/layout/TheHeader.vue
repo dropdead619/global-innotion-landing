@@ -1,8 +1,33 @@
 <script setup lang="ts">
+const isExtended = ref(false);
+
+const prevScrollPos = ref();
+
+function scrollEventCb() {
+  const currentScrollPos = window.scrollY;
+  if (currentScrollPos < prevScrollPos.value)
+    isExtended.value = false;
+  else
+    isExtended.value = true;
+
+  prevScrollPos.value = currentScrollPos;
+}
+
+document.addEventListener('scroll', scrollEventCb);
+
+onUnmounted(() => {
+  document.removeEventListener('scroll', scrollEventCb);
+});
 </script>
 
 <template>
-  <div class="bg-background flex mx-auto w-full py-2 px-4  z-10 items-center fixed sm:(py-4 px-8) ">
+  <header
+    class="bg-background flex mx-auto w-full  py-2 px-4 transition transition-all ease-in-out z-10  duration-300 items-center fixed sm:(py-4 px-8) "
+    :class="{
+      'transform -translate-y-20': isExtended,
+      'translate-y-0': !isExtended,
+    }"
+  >
     <div class="mr-8 sm:mr-10 md:mr-41">
       <a href="">
         <LogoIcon />
@@ -40,5 +65,5 @@
         </BaseText>
       </a>
     </div>
-  </div>
+  </header>
 </template>

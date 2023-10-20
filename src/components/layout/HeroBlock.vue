@@ -49,7 +49,11 @@ const technologiesTabs = ref([
         </BaseText>
       </div>
 
-      <BaseButton class="mt-auto sm:mt-0" variant="primary">
+      <BaseButton
+        class="mt-auto sm:mt-0"
+        variant="primary"
+        @click="scrollToElement('send')"
+      >
         <p class="text-base sm:text-[20px]">
           Записаться
         </p>
@@ -73,10 +77,10 @@ const technologiesTabs = ref([
   @apply pb-10 md:pb-17.5;
   &__content {
     width: 100%;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url('../../assets/images/hero.png') no-repeat, lightgray -82px -369.39px / 105.959% 370.198% no-repeat ;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url('./hero.png') no-repeat, lightgray -82px -369.39px / 105.959% 370.198% no-repeat ;
     background-size: cover;
-    border-radius: 40px;
-    @apply h-[553px] py-10 px-6 sm:(h-175) md:(py-[6.1875rem] px-20) ;
+
+    @apply rounded-3xl h-[553px] py-10 px-6 sm:(h-175) md:(py-[6.1875rem] px-20 rounded-[40px]) ;
   }
 }
 </style>

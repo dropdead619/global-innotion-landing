@@ -21,11 +21,11 @@ defineProps({
 .card {
   @apply flex flex-col;
     &--light {
-      @apply bg-white rounded-4xl;
+      @apply bg-white rounded-3xl sm:(rounded-4xl);
     }
 
     &--dark {
-      @apply bg-black rounded-4xl;
+      @apply bg-black rounded-3xl sm:(rounded-4xl);
     }
 
     &--xxs {

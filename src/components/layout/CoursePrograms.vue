@@ -55,7 +55,7 @@ function toggleCardVisibility(idx: number) {
 
 <template>
   <div id="program" class="py-10 md:py-17.5">
-    <BaseText class="mb-6 sm:mb-10" heading="h2">
+    <BaseText class="mb-6 sm:(mb-10 mx-14) " heading="h2">
       Программы курсов
     </BaseText>
 
@@ -83,9 +83,9 @@ function toggleCardVisibility(idx: number) {
 
           <div class="flex flex-1 w-full gap-3 items-center justify-between lg:w-fit">
             <UpIcon
-              class="cursor-pointer order-3 transform transition transition-transform duration-500 lg:order-1"
+              class="cursor-pointer order-3 transform transition transition-transform rotate-180 duration-500 lg:order-1"
               :class="{
-                'rotate-180': card.isOpen,
+                'rotate-0': card.isOpen,
               }"
               @click="toggleCardVisibility(i)"
             />

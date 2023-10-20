@@ -3,7 +3,7 @@
 
 <template>
   <div id="about" class="py-10 md:py-17.5">
-    <BaseText class="mb-6 sm:mb-10" heading="h2">
+    <BaseText class="mb-6 sm:(mb-10 mx-14) " heading="h2">
       О нас
     </BaseText>
 
@@ -32,7 +32,11 @@
       </BaseCard>
       <BaseCard class="h-[200px] col-span-12 sm:h-full lg:col-span-4" variant="dark">
         <div class="flex h-full w-full items-center justify-center">
-          <img alt="Global innotion" src="@/assets/images/global_innotion.png">
+          <NuxtImg
+            alt="Global innotion"
+            src="/global_innotion.png"
+            width="302"
+          />
         </div>
       </BaseCard>
     </div>

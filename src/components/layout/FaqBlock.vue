@@ -65,7 +65,7 @@ function toggleCard(idx: number) {
 <template>
   <div id="faq" class="py-10 md:py-17.5">
     <div class="mb-8">
-      <BaseText class="mb-6 sm:mb-10" heading="h2">
+      <BaseText class="mb-6 sm:(mb-10 mx-14) " heading="h2">
         FAQ
       </BaseText>
       <BaseText
@@ -83,6 +83,7 @@ function toggleCard(idx: number) {
         :key="faq.title"
         class="flex flex-col overflow-hidden"
         size="xxs"
+        @click="toggleCard(i)"
       >
         <div class="flex justify-between">
           <p
@@ -91,16 +92,16 @@ function toggleCard(idx: number) {
             {{ faq.title }}
           </p>
 
-          <CloseIcon
-            v-if="faq.isOpen"
-            class="cursor-pointer"
-            @click="toggleCard(i)"
-          />
-          <AddIcon
-            v-else
-            class="cursor-pointer"
-            @click="toggleCard(i)"
-          />
+          <div class="h-6 w-6">
+            <CloseIcon
+              v-if="faq.isOpen"
+              class="cursor-pointer"
+            />
+            <AddIcon
+              v-else
+              class="cursor-pointer"
+            />
+          </div>
         </div>
 
         <p

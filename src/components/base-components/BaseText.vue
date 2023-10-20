@@ -37,7 +37,7 @@ withDefaults(defineProps<{ variant?: Variant; weight?: Weight; heading?: 'h1' | 
     }
 
     &--medium {
-      @apply font-medium;
+      @apply font-normal;
     }
 
     &--semibold {
@@ -72,7 +72,7 @@ withDefaults(defineProps<{ variant?: Variant; weight?: Weight; heading?: 'h1' | 
     }
     // 32px
     &--xl {
-      @apply text-2xl leading-7 sm:(text-[2rem] leading-10) ;
+      @apply text-[20px] leading-7 sm:(text-[2rem] leading-10) ;
     }
     // 48px
     &--1xl {
@@ -81,15 +81,15 @@ withDefaults(defineProps<{ variant?: Variant; weight?: Weight; heading?: 'h1' | 
 
     // 24px
     &--h3 {
-      @apply font-medium text-[20px] leading-[28px] sm:(text-[24px] leading-8) ;
+      @apply text-[20px] leading-[28px] sm:(text-[24px] leading-8) ;
     }
     // 64px
     &--h2 {
-      @apply font-medium text-[28px] leading-[36px] sm:(text-[64px] leading-18) ;
+      @apply text-[28px] leading-[36px] sm:(text-[64px] leading-18) ;
     }
     // 72px
     &--h1 {
-      @apply text-[28px] leading-[32px] sm:(text-5xl leading-12 font-medium) lg:(text-7xl leading-20 font-medium) ;
+      @apply text-[28px] leading-[32px] sm:(text-5xl leading-12) lg:(text-7xl leading-20) ;
     }
   }
   </style>

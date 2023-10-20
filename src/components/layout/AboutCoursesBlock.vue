@@ -3,12 +3,12 @@
 
 <template>
   <div class="py-10 md:py-17.5">
-    <BaseText class="mb-6 sm:mb-10" heading="h2">
+    <BaseText class="mb-6 sm:(mb-10 mx-14) " heading="h2">
       О курсах
     </BaseText>
 
     <div class="grid gap-6 grid-cols-12">
-      <BaseCard class="col-span-12 lg:(col-span-6)">
+      <BaseCard class="order-1 col-span-12 lg:(col-span-6)">
         <BaseText class="mb-4" heading="h3">
           Unreal Engine C++ Game Developer
         </BaseText>
@@ -25,15 +25,15 @@
         </BaseText>
       </BaseCard>
 
-      <BaseImage class="col-span-12 lg:(col-span-6)">
-        <img alt="Picture 1" src="@/assets/images/pic_1.png">
+      <BaseImage class="order-2 col-span-12 lg:(col-span-6)">
+        <NuxtImg alt="Picture 1" src="/pic_1.png" />
       </BaseImage>
 
-      <BaseImage class="order-5 col-span-12 lg:(col-span-6 order-3) ">
-        <img alt="Picture 2" src="@/assets/images/pic_2.png">
+      <BaseImage class="order-4 col-span-12 lg:(col-span-6 order-3) ">
+        <NuxtImg alt="Picture 2" src="/pic_2.png" />
       </BaseImage>
 
-      <BaseCard class="col-span-12 lg:(col-span-6)">
+      <BaseCard class="order-3 col-span-12 lg:(col-span-6 order-4) ">
         <BaseText class="mb-4" heading="h3">
           Unity C# 2D Game Developer
         </BaseText>
